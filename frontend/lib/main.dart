@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Matrix App Quest !',
+      title: 'Matrix App Quest',
       theme: ThemeData(
         fontFamily: 'ShareTechMono',
         primaryColor: const Color(0xFF00FF41), // Matrix green  

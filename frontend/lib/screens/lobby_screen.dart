@@ -9,6 +9,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'game_table_screen.dart';
 import '../widgets/game_rules_dialog.dart';
+import 'login_screen.dart';
 
 // Responsive layout helper class
 class ResponsiveLayout {
@@ -422,6 +423,12 @@ class _LobbyScreenState extends State<LobbyScreen> {
       
       // Sign out from Firebase Auth
       await FirebaseAuth.instance.signOut();
+      if (mounted) {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false,
+      );
+    }
       
       // The auth state listener in main.dart will handle navigation
       
